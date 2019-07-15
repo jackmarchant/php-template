@@ -1,8 +1,8 @@
 {
-    "name": "jackmarchant/dot-notation",
+    "name": "jackmarchant/php-template",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
