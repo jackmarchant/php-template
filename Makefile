@@ -4,14 +4,14 @@ COMPOSE_PROJECT_NAME=app
 
 COMPOSE_FILE?=docker-compose.yml
 
-COMPOSE=docker-compose -p $(COMPOSE_PROJECT_NAME) -f $(COMPOSE_FILE)
+COMPOSE=docker-compose -f $(COMPOSE_FILE)
 
 build:
 	$(COMPOSE) build
 
 up:
 	$(COMPOSE) pull
-	$(COMPOSE) up -d $(COMPOSE_PROJECT_NAME)
+	$(COMPOSE) up -d
 
 down:
 	$(COMPOSE) down
