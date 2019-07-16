@@ -21,12 +21,12 @@ clean:
 	$(COMPOSE) rm --force
 
 shell:
-	docker exec -it $(COMPOSE_PROJECT_NAME)_$(COMPOSE_PROJECT_NAME)_1 /bin/sh
+	docker exec -it $(COMPOSE_PROJECT_NAME) sh
 
 init: build up shell
 
 logs:
-	docker logs -f $(COMPOSE_PROJECT_NAME)_$(COMPOSE_PROJECT_NAME)_1
+	docker logs -f $(COMPOSE_PROJECT_NAME)
 
 test:
-	docker exec $(COMPOSE_PROJECT_NAME)_$(COMPOSE_PROJECT_NAME)_1 mix test --trace
+	docker exec $(COMPOSE_PROJECT_NAME) vendor/bin/phpunit
