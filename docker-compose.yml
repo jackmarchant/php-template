@@ -12,6 +12,10 @@ services:
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
+      MYSQL_HOST: db
+      MYSQL_DATABASE: database
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
     working_dir: /var/www
     volumes:
       - ./:/var/www

@@ -2,10 +2,17 @@
 
 namespace App;
 
+use App\Container;
+
 class App
 {
-    public static function run()
+    public function __construct(Container $container)
     {
-        return true;
+        $this->database = $container->get('database');
+    }
+
+    public function run(): string
+    {
+        return 'Hello, World!';
     }
 }
