@@ -1,5 +1,8 @@
 FROM php:7.2-fpm
 
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
 
@@ -32,6 +35,9 @@ COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www
+
+# Install Dependencies
+RUN composer install
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

@@ -23,7 +23,7 @@ clean:
 shell:
 	docker exec -it $(COMPOSE_PROJECT_NAME) sh
 
-init: build up shell
+init: build up
 
 logs:
 	docker logs -f $(COMPOSE_PROJECT_NAME)
