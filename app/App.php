@@ -2,10 +2,11 @@
 
 namespace App;
 
-use App\Container;
-
 class App
 {
+    /** @var Database  */
+    private $database;
+
     public function __construct(Container $container)
     {
         $this->database = $container->get('database');
